@@ -16,6 +16,13 @@ body{
     display: flex;
     padding: 20px;
 }
+#headimage {
+    width: 15%;
+}
+#headtext {
+    width: 85%;
+    margin-left: 50px;
+}
 #footer {
     background-color: #9A8C98;
     text-align: center;
