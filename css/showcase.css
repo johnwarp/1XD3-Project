@@ -9,3 +9,7 @@ beish: #F2E9E4
 #projectslist {
     display: flex;
 }
+#headimage{
+    width: 15%;
+    height: 15%
+}
