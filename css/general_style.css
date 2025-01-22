@@ -17,6 +17,19 @@ body{
     display: flex;
     padding: 20px;
 }
+<<<<<<< Updated upstream
+=======
+#headimage {
+    width: 20%;
+    height:20%;
+    margin:auto;
+}
+#headtext {
+    width: 70%;
+    margin: auto;
+    margin-left: 5%;
+}
+>>>>>>> Stashed changes
 #footer {
     background-color: #C9ADA7;
     text-align: center;
@@ -28,4 +41,24 @@ body{
 }
 .navlink {
     background-color: white;
+<<<<<<< Updated upstream
+=======
+}
+
+@media (max-width: 980px) {
+    #title {
+        font-size: 50px;
+    }
+}
+
+@media (max-width:580px) {
+    #title {
+        font-size: 30px;
+    }
+    #headimage {
+        width: 25%;
+        height: 25%;
+        margin: auto;
+    }
+>>>>>>> Stashed changes
 }
