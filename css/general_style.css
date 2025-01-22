@@ -26,20 +26,26 @@ body{
     margin: auto;
     margin-left: 5%;
 }
-#footer {
+#content {
     background-color: #C9ADA7;
-    text-align: center;
     padding: 20px;
-#footer {
-    background-color: #9A8C98;
-    text-align: center;
-    padding: 20px;
-    bottom: 0;
 }
 #nav {
     background-color:#9A8C98;
     padding: 20px;
 }
+#footer {
+    background-color: #9A8C98;
+    text-align: center;
+    padding: 20px;
+}
+#title {
+    font-size: 70px;
+}
+.navlink {
+    background-color: white;
+}
+
 
 @media (max-width: 980px) {
     #title {
@@ -56,14 +62,4 @@ body{
         height: 25%;
         margin: auto;
     }
-}
-#content {
-    background-color: #C9ADA7;
-    padding: 20px;
-}
-#title {
-    font-size: 70px;
-}
-.navlink {
-    background-color: white;
 }
