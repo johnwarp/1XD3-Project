@@ -9,3 +9,22 @@ beish: #F2E9E4
 
 
 /* TODO: add css elements specific to the front page */
+#nav1{
+    display: flex;
+    background-color:#9A8C98;
+}
+.navlink1{
+    padding: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #F2E9E4;
+    width: 25%;
+    margin: 10px;
+    text-align: center;
+}
+
+@media (max-width: 550px) {
+    .navlink1 {
+        width: 25%;
+    }
+}
