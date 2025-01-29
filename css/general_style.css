@@ -30,9 +30,9 @@ body{
     background-color: #C9ADA7;
     padding: 20px;
 }
-#nav {
+#nav{
+    display: flex;
     background-color:#9A8C98;
-    padding: 20px;
 }
 #footer {
     background-color: #9A8C98;
