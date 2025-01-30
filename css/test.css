@@ -1,0 +1,37 @@
+/* FILE USED FOR DEBUGGING/TESTING ONLY */
+
+.tile_group {
+    display:flex;
+}
+.tile_set {
+    display:flex;
+    width:50%;
+}
+.tile {
+    background-color: lightblue;
+    padding:20px;
+    width:50%;
+    margin: 5px;
+    text-align:center;
+
+}
+.bro {
+    background-color: coral;
+}
+
+@media (max-width:1024px) {
+    .tile_group {
+        flex-direction:column;
+    }
+    .tile_set {
+        width:auto;
+    }
+}
+@media (max-width:480px) {
+    .tile_set {
+        flex-direction:column;
+    }
+    .tile {
+        width:auto;
+    }
+}

@@ -10,6 +10,11 @@ beish: #F2E9E4
 
 /* TODO: add css elements specific to the about page */
 
+/* 
+In case we need this code for the future.
+Just commenting this out because we updated the code in general.css, and I don't
+wanna make it seem like this file just disappeared.
+
 #nav1{
     display: flex;
     background-color:#9A8C98;
@@ -29,4 +34,4 @@ beish: #F2E9E4
     .navlink1 {
         width: 25%;
     }
-}
+} */

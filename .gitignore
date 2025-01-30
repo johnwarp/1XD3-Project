@@ -1,5 +1,5 @@
-# This file tells github which files to ignore during a commit
-# i.e. the files listed here will not be committed to github
+# this file is used to tell github to not commit any files listed
 
+# test_page.html is for debugging only, so it does not need to be commited to github
 test.html
-css/test.css
+images/test.css
