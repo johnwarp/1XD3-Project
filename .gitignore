@@ -1,0 +1,5 @@
+# This file tells github which files to ignore during a commit
+# i.e. the files listed here will not be committed to github
+
+test.html
+css/test.css
