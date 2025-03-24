@@ -14,25 +14,30 @@ Development page
 <body>
     <div id="container">
         <div id="header">
-            <img id="headimage" src="images/tiger logo.jpg"> 
+            <img id="headimage" src="images/tiger logo.jpg">
             <div id="headtext">
-                <h1 id="title">FlyingTigers</h1>
+                <h1 id="title">Development Plan</h1>
             </div>
-        
+
         </div>
-        <div id="nav1">
-            <a class="navlink1" href="index.html" >Home page</a>
-            <a class="navlink1" href="showcase.html" >showcase page</a>
-            <a class="navlink1" href="about.html" >about page</a>
-            <a class="navlink1" href="project.html" >project page</a>
+        <div id="nav">
+            <div class="nav_set">
+                <a class="navlink" href="index.html">Home page</a>
+                <a class="navlink" href="showcase.html">Showcase page</a>
+            </div>
+            <div class="nav_set">
+                <a class="navlink" href="about.html">About page</a>
+                <a class="navlink" href="project.html">Project page</a>
+            </div>
         </div>
         <div id="content">
-            
+
             <p>We are the Flying Tigers team, our team memebers include Ziyi, Nandini, and Samuel.</p>
             <p>Our client is the McMaster Marching band.</p>
             <div>
                 <h2>Purpose</h2>
-                <p>This app is supposed to act as an interface between the McMaster Marching Band and students and staff.
+                <p>This app is supposed to act as an interface between the McMaster Marching Band and students and
+                    staff.
                     They can request the Marching Band to serenade their loved ones for the valentines day.
                 </p>
             </div>
@@ -45,8 +50,10 @@ Development page
                 </div>
                 <div>
                     <h3>Table 2: Serenade_Schedule</h3>
-                    <P>Pupose: Manages serenade time slots, booked and free time slots, ensures the same time slot is not booked twice</P>
-                    <p>Fields: id (primary key), userId (Foreign Key), date of the request, time of the request, location </p>
+                    <P>Pupose: Manages serenade time slots, booked and free time slots, ensures the same time slot is
+                        not booked twice</P>
+                    <p>Fields: id (primary key), userId (Foreign Key), date of the request, time of the request,
+                        location </p>
                 </div>
                 <div>
                     <h3>Table 3: Band_Member_Availability</h3>
@@ -61,7 +68,8 @@ Development page
             </div>
             <div>
                 <h2>Functions</h2>
-                <p>User Registration & Serenade Request (INSERT into Users, Status, Serenade_Schedule tables ) -> Users fill out a form with their details and recipient details</p>
+                <p>User Registration & Serenade Request (INSERT into Users, Status, Serenade_Schedule tables ) -> Users
+                    fill out a form with their details and recipient details</p>
                 <p>View Serenade Schedule (SELECT from Serenade_Schedule table)</p>
                 <P>Confirm or Cancel Serenades (UPDATE Serenade_Schedule table)</P>
                 <p>After completing, confirming, or cancelling a request (UPDATE Status table)</p>
@@ -70,11 +78,15 @@ Development page
             <div>
                 <h2>Role of PHP and JavaScript</h2>
                 <h3>PHP</h3>
-                <P>It handles the user form submissions,and acts as an interface between the database and the user. It is also responsible for processing user authentication and scheduling logic</P>
+                <P>It handles the user form submissions,and acts as an interface between the database and the user. It
+                    is also responsible for processing user authentication and scheduling logic</P>
                 <h3>JavaScript</h3>
-                <p> It is mainly concerned with enhancing the User Interface, ensuring all the front- end components like the form and animations work smoothly.</p>
+                <p> It is mainly concerned with enhancing the User Interface, ensuring all the front- end components
+                    like the form and animations work smoothly.</p>
             </div>
-            <div><h2>Roles of the Team</h2></div>
+            <div>
+                <h2>Roles of the Team</h2>
+            </div>
             <div>
                 <h3>Ziyi</h3>
                 <p>Handles the implementation of the form, and user Interface aspects</p>
@@ -85,28 +97,51 @@ Development page
             </div>
             <div>
                 <h3>Samuel</h3>
-                <p>Develops PHP scripts for handling submissions and database transactions. Implements user authentication and email notifications.</p>
+                <p>Develops PHP scripts for handling submissions and database transactions. Implements user
+                    authentication and email notifications.</p>
             </div>
 
             <div>
                 <h2>Increments</h2>
                 <div>
-                <p>Increment 1 (March 26): The basic structure for the front end and back end of the website will be finished.</p></div>
-                   
-                <div><p>Ziyi -> Working on the form, ensuring user inputs valid data.
-                    Nandini -> Working on the design aspect of the website, Basic Database structure created i.e tables designed
-                    Samuel -> PHP backend designed to handle user submissions
-                </p></div>
-                
-            
-                <div><p>Increment 2 (April 5): Working on Enhancing the front-end with animations. Working on the functunality of the database part, optimizing it, and ensuring it's connection to the website.</p></div>
-                    <div><p>Ziyi -> JavaScript functions for the availability of time slots
+                    <p>Increment 1 (March 26): The basic structure for the front end and back end of the website will be
+                        finished.</p>
+                </div>
+
+                <div>
+                    <p>Ziyi -> Working on the form, ensuring user inputs valid data.
+                        Nandini -> Working on the design aspect of the website, Basic Database structure created i.e
+                        tables designed
+                        Samuel -> PHP backend designed to handle user submissions
+                    </p>
+                </div>
+
+
+                <div>
+                    <p>Increment 2 (April 5): Working on Enhancing the front-end with animations. Working on the
+                        functunality of the database part, optimizing it, and ensuring it's connection to the website.
+                    </p>
+                </div>
+                <div>
+                    <p>Ziyi -> JavaScript functions for the availability of time slots
                         Nandini -> Animations, optimizing database, and connecting it to the website
-                        Samuel -> backend PHP for assigning band members based on their availability and scheduled requests
-                    </p></div>
-                <div><p>Increment 3 (April 23): Finishing up the website, Final bug fixes, deploying the web app </p></div>
+                        Samuel -> backend PHP for assigning band members based on their availability and scheduled
+                        requests
+                    </p>
+                </div>
+                <div>
+                    <p>Increment 3 (April 23): Finishing up the website, Final bug fixes, deploying the web app </p>
+                </div>
                 <div>
                     <h2>Client Feedback</h2>
+                    <h3>General Satisfaction</h3>
+                    <p>Client is mostly satisfied with the project's current scope</p>
+                    <h3>Changes and Requests</h3>
+                    <ol>
+                        <li>Ask and store specifically the user's instagram handle. "Could you collect their instagram handle" - band representative.</li>
+                        <li>Give the user the option to choose which song they'd like for the serenation.</li>
+                        <li>Along with the band's schedule, include the instrumentation of the day the user books.</li>
+                    </ol>
                 </div>
             </div>
         </div>
