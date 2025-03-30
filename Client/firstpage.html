@@ -1,35 +1,95 @@
+<!--
+Team number:27
+
+
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Serenade Your Valentine</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js"></script>
 </head>
+
 <body>
-  <div class="container">
+  <!-- Home page
+   1. maybe change the mouse to heart later
+   2. maybe add some bgm 
+   3. maybe add some picture
+   4. add more info to explain what the page is about
+   5. have a page giving further information on the marching band in case the user wants to join
+ -->
+  <div id="page-home" class="container">
     <h1 class="title">Serenade <br /> Your Valentine</h1>
     <p class="subtitle">Request a personalized performance from the McMaster Marching Band</p>
-    <button class="button">💌 Learn more</button>
+    <button class="button" id="learn-more">💌 Learn more</button>
+
+    <div class="grid">
+      <div class="card pink">
+        <h2 class="card-title">💗 The Pink</h2>
+        <p class="card-desc">Classic love songs for your sweetheart</p>
+      </div>
+      <div class="card red">
+        <h2 class="card-title">❤️ The Red</h2>
+        <p class="card-desc">Bold serenades for romantic confessions</p>
+      </div>
+      <div class="card purple">
+        <h2 class="card-title">💜 The Purple</h2>
+        <p class="card-desc">Mysterious tunes for secret admirers</p>
+      </div>
+      <div class="card blue">
+        <h2 class="card-title">💙 The Blue</h2>
+        <p class="card-desc">Sweet melodies for best friends</p>
+      </div>
+    </div>
   </div>
 
-  <div class="grid">
-    <div class="card pink">
-      <h2 class="card-title">💗 The Pink</h2>
-      <p class="card-desc">Classic love songs for your sweetheart</p>
-    </div>
-    <div class="card red">
-      <h2 class="card-title">❤️ The Red</h2>
-      <p class="card-desc">Bold serenades for romantic confessions</p>
-    </div>
-    <div class="card purple">
-      <h2 class="card-title">💜 The Purple</h2>
-      <p class="card-desc">Mysterious tunes for secret admirers</p>
-    </div>
-    <div class="card blue">
-      <h2 class="card-title">💙 The Blue</h2>
-      <p class="card-desc">Sweet melodies for best friends</p>
-    </div>
+  <!-- info form 
+   1. css of the form looks a little bit wired need to fix
+   2. maybe make it look more fancy
+   3. finish the empty input
+   4. maybe add some bgm and pictures
+   5. php 
+   -->
+  <div id="page-form" class="form-container hidden">
+    <h1>💘 Valentine Request Form</h1>
+    <!--action="valentine_form.php" method="POST"    php might added here-->
+    <form id="valentine-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="time">Preferred Time:</label>
+      <input type="datetime-local" id="time" required>
+      <!--Three empty text input, easy for us to add things later-->
+      <label for="msg1">Message 1:</label>
+      <input type="text" id="msg1">
+
+      <label for="msg2">Message 2:</label>
+      <input type="text" id="msg2">
+
+      <label for="msg3">Message 3:</label>
+      <input type="text" id="msg3">
+
+      <button type="submit">Submit 💖</button>
+    </form>
   </div>
+
+  <!-- Thanks page 
+   1. more fancy
+   2. maybe add more button (more info/back to homepage/....)
+   -->
+  <div id="page-thanks" class="thank-you hidden">
+    <h1>💖 Thank you for submitting!</h1>
+    <p>We'll serenade your Valentine soon!</p>
+  </div>
+
+  
 </body>
 </html>
+
