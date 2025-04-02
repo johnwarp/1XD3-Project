@@ -5,113 +5,132 @@ Team number:27
 
 */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fbc9e2;
-    color: #1f2937;
-    
-  } 
-  .container {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  .title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    line-height: 1.2;
-  }
-  .subtitle {
-    margin-top: 16px;
-    font-size: 1.125rem;
-  }
- 
-  .button {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 10px 24px;
-    background-color: #ec4899;
-    color: white;
-    border: none;
-    border-radius: 9999px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .button:hover {
-    background-color: #db2777;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
-    padding: 40px 20px;
-  }
-  .card {
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    color: white;
-  }
-  .pink { background-color: #f472b6; }
-  .red { background-color: #f87171; }
-  .purple { background-color: #c084fc; }
-  .blue { background-color: #7dd3fc; }
-  .card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  .card-desc {
-    margin-top: 8px;
-    font-size: 0.875rem;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fbc9e2;
+  color: #1f2937;
 
-  .hidden {
-    display: none;
-  }
-  
-  .form-container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-container label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .form-container button {
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #ec4899;
-    color: white;
-    border: none;
-    border-radius: 9999px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-container button:hover {
-    background-color: #db2777;
-  }
-  
-  .thank-you {
-    text-align: center;
-    padding: 100px 20px;
-    color: #ec4899;
-  }
-  
+}
+
+.container {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin-top: 16px;
+  font-size: 1.125rem;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 24px;
+  background-color: #ec4899;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #db2777;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  color: white;
+}
+
+.pink {
+  background-color: #f472b6;
+}
+
+.red {
+  background-color: #f87171;
+}
+
+.purple {
+  background-color: #c084fc;
+}
+
+.blue {
+  background-color: #7dd3fc;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.card-desc {
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-container button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #ec4899;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+  background-color: #db2777;
+}
+
+.thank-you {
+  text-align: center;
+  padding: 100px 20px;
+  color: #ec4899;
+}

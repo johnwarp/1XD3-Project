@@ -52,6 +52,9 @@ body{
     margin: 5px;
     text-align: center;
 }
+.navlink:hover {
+    background-color: #f0d2c2;
+}
 .nav_set {
     display:flex;
     width:50%;

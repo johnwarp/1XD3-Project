@@ -57,7 +57,7 @@ Team number:27
   <div id="page-form" class="form-container hidden">
     <h1>💘 Valentine Request Form</h1>
     <!--action="valentine_form.php" method="POST"    php might added here-->
-    <form id="valentine-form">
+    <form id="valentine-form" action="server/process_submission.php" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" required>
 
@@ -67,14 +67,15 @@ Team number:27
       <label for="time">Preferred Time:</label>
       <input type="datetime-local" id="time" required>
       <!--Three empty text input, easy for us to add things later-->
-      <label for="msg1">Message 1:</label>
-      <input type="text" id="msg1">
+      <!-- modified msg1 to become the user's instagram handle -->
+      <label for="insta">Instagram @:</label>
+      <input type="text" id="insta" required>
 
-      <label for="msg2">Message 2:</label>
-      <input type="text" id="msg2">
+      <label for="msg2">Song request:</label>
+      <input type="text" id="msg2" required>
 
       <label for="msg3">Message 3:</label>
-      <input type="text" id="msg3">
+      <input type="text" id="msg3" required>
 
       <button type="submit">Submit 💖</button>
     </form>
@@ -86,7 +87,17 @@ Team number:27
    -->
   <div id="page-thanks" class="thank-you hidden">
     <h1>💖 Thank you for submitting!</h1>
+    <p>Your information has been successfully submitted!</p>
     <p>We'll serenade your Valentine soon!</p>
+  </div>
+
+
+  <!--  Error page (mainly for debugging)
+    probably delete soon or spruce it up so it doesn't look stupid
+  
+  -->
+  <div id="page-error" class="hidden">
+    <h1 id="error-message">Something went wrong</h1>
   </div>
 
   
