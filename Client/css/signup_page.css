@@ -1,0 +1,11 @@
+/*
+Description: Extra styling so that the bandform looks fine on it's own
+*/
+
+body {
+    padding:0;
+}
+
+.form-container {
+    margin-top:30px;
+}
