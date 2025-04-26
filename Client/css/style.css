@@ -4,6 +4,10 @@ Team number:27
 
 
 */
+*{
+  cursor: url('images/custom-cursor.png'), auto;
+
+}
 body {
   margin: 0;
   padding: 0;
@@ -13,26 +17,12 @@ body {
 
 }
 
+
 .container {
   padding: 40px 20px;
   text-align: center;
 }
 
-.heart {
-  position: absolute;
-  font-size: 24px;
-  animation: floatUp 6s infinite ease-in-out;
-  color: #fda4af;
-  opacity: 0.7;
-  pointer-events: none;
-}
-  
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 0.7; }
-  50% { transform: translateY(-150px) scale(1.2); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 0.7; }
-}
-  
 .title {
   font-size: 3.5rem;
   font-weight: bold;
@@ -149,3 +139,47 @@ body {
   padding: 100px 20px;
   color: #ec4899;
 }
+
+.heart {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #c2185b;
+  transform: rotate(45deg);
+  animation: fade 1s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #c2185b;
+  border-radius: 50%;
+}
+
+
+.heart::before {
+  top: -8px;
+  left: 0;
+}
+
+.heart::after {
+  left: -8px;
+  top: 0;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2) translateY(-20px) rotate(45deg);
+  }
+}
+
