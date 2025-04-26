@@ -15,8 +15,8 @@ $date = filter_input(INPUT_GET, "date", FILTER_SANITIZE_SPECIAL_CHARS);         
 $timeslot = filter_input(INPUT_GET, "timeslot", FILTER_SANITIZE_SPECIAL_CHARS);     // only accepts 11:00:00, 13:00:00, or 17:00:00
 
 // assigned date and timeslot values for debugging only
-$date = "2025-04-28";
-$timeslot = "13:00:00";
+// $date = "2025-04-28";
+// $timeslot = "13:00:00";
 
 $timeslot_id;
 
