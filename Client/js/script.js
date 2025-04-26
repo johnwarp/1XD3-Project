@@ -28,6 +28,47 @@ window.addEventListener('load', function () {
   document.body.addEventListener('click', function () {
     bgm.play();
   });
+  const audioPlayer = new Audio(); 
+  function playCardMusic(songFile) {
+    bgm.pause();
+
+    
+    fetch(songFile)
+      .then(response => response.blob())
+      .then(blob => {
+        const objectURL = URL.createObjectURL(blob);
+        audioPlayer.src = objectURL;
+        audioPlayer.play();
+      })
+      .catch(error => {
+        console.error("Error loading audio:", error);
+      });
+  }
+
+  
+  document.getElementById('card-pink').addEventListener('mouseenter', function () {
+    playCardMusic('audio/pink.mp3');
+  });
+
+  document.getElementById('card-red').addEventListener('mouseenter', function () {
+    playCardMusic('audio/red.mp3');
+  });
+
+  document.getElementById('card-purple').addEventListener('mouseenter', function () {
+    playCardMusic('audio/purple.mp3');
+  });
+
+  document.getElementById('card-blue').addEventListener('mouseenter', function () {
+    playCardMusic('audio/blue.mp3');
+  });
+
+  ['card-pink', 'card-red', 'card-purple', 'card-blue'].forEach(id => {
+    document.getElementById(id).addEventListener('mouseleave', function () {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+      bgm.play();
+    });
+  });
 
   learnBtn.addEventListener('click', function () {
     home.classList.add('hidden');
