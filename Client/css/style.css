@@ -161,69 +161,69 @@ footer {
 
 /* Navbar Styles */
 .navbar {
-  background-color: white;
-  padding: 30px 80px; /* Increased padding for a larger navbar */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #f9a8d4;
+    padding: 35px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
+  
 .nav-container {
-  display: flex;
-  justify-content: center; /* Center the nav items horizontally */
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
 }
-
+  
 .nav-logo {
-  position: absolute; /* Keep the logo on the left */
-  left: 30px;
+    position: absolute; /* Keep the logo on the left */
+    left: 30px;
 }
-
+  
 .nav-logo img {
-  height: 90px; /* Larger logo size */
-  width: auto;
+    height: 90px; /* Larger logo size */
+    width: auto;
 }
-
+  
 .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 60px; /* Increased spacing between links */
-  margin: 0;
-  padding: 0;
-  justify-content: center; /* Ensure the links are centered */
+    list-style: none;
+    display: flex;
+    gap: 60px; /* Increased spacing between links */
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Ensure the links are centered */
 }
-
+  
 .nav-menu a {
-  text-decoration: none;
-  color: #1f2937;
-  font-weight: 800; /* Bolder text */
-  font-size: 1.5rem; /* Increased text size */
-  transition: color 0.3s;
+    text-decoration: none;
+    color: #1f2937;
+    transition: color 0.3s;
+    font-weight: bold;
+    font-size: 1.4rem;
+    padding: 8px 20px;
 }
-
+  
 .nav-menu a:hover {
-  color: #ec4899;
+    color: #ec4899;
 }
-
+  
 /* Prevent overflow and ensure content fits on smaller screens */
 .nav-container {
-  flex-wrap: nowrap;
-  overflow: hidden;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
-
+  
 /* Add padding to body to prevent content being hidden behind navbar */
 body {
-  padding-top: 120px; /* Adjusted padding to account for the bigger navbar */
+    padding-top: 0px; /* Adjusted padding to account for the bigger navbar */
 }
-
 /* Add space below the navbar */
 .navbar + div {
   margin-bottom: 120px; /* This will add space between the navbar and the next div */
