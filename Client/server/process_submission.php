@@ -4,51 +4,42 @@ php form for processing the user's information from the form
 */
 
 header('Content-Type: application/json');
-
 include "connect.php";
 
-// get post parameters from the user filled form
+// Get post parameters from the user-filled form
 $name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_GET, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-$time = filter_input(INPUT_GET, "time", FILTER_SANITIZE_SPECIAL_CHARS);
 $insta = filter_input(INPUT_GET, "insta", FILTER_SANITIZE_SPECIAL_CHARS);
-$msg2 = filter_input(INPUT_GET, "msg2", FILTER_SANITIZE_SPECIAL_CHARS);
-$msg3 = filter_input(INPUT_GET, "msg3", FILTER_SANITIZE_SPECIAL_CHARS);
 
 $paramsok = true;
 
 try {
-if (
-    $name !== null && $name !== "" &&
-    $email !== null && $email !== "" &&
-    $time !== null && $time !== "" &&
-    $insta !== null && $insta !== "" &&
-    $msg2 !== null && $msg2 !== "" &&
-    $msg3 !== null && $msg3 !== ""
-) {
-    // preparing the insert command
-    $cmd = "INSERT INTO `submission`(`email`, `name`, `timeslot`, `insta`, `msg2`, `msg3`) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $dbh->prepare($cmd);
+    if (
+        $name !== null && $name !== "" &&
+        $email !== null && $email !== "" &&
+        $insta !== null && $insta !== ""
+    ) {
+        // Preparing the insert command
+        $cmd = "INSERT INTO `submission`(`email`, `name`, `insta`) VALUES (?, ?, ?)";
+        $stmt = $dbh->prepare($cmd);
 
-    // executing the insert command
-    $args = [$email, $name, $time, $insta, $msg2, $msg3];
-    $success = $stmt->execute($args);
+        // Executing the insert command
+        $args = [$email, $name, $insta];
+        $success = $stmt->execute($args);
 
-    if ($success) {
-        echo json_encode("ok");
+        if ($success) {
+            echo json_encode(["success" => true]);
+        } else {
+            echo json_encode(["success" => false, "error" => "Database insert failed."]);
+        }
     } else {
-        echo json_encode("bad");
+        echo json_encode(["success" => false, "error" => "Missing required fields."]);
     }
-} else {
-    echo json_encode("bad");
-}
-
-} catch (PDOException $e) {         // TODO remember to add the citation for this code
+} catch (PDOException $e) {
     if ($e->getCode() === "23000") {
-        echo json_encode("duplicate");
+        echo json_encode(["success" => false, "error" => "Duplicate entry."]);
     }
 } catch (Exception $e) {
-    echo json_encode("bad");
+    echo json_encode(["success" => false, "error" => "An unexpected error occurred."]);
 }
-
 ?>
