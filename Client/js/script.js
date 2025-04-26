@@ -24,6 +24,11 @@ window.addEventListener('load', function () {
   let valentineForm = document.getElementById('valentine-form');
   let songForm = document.getElementById('song-form');
 
+  const bgm = document.getElementById('bgm');
+  document.body.addEventListener('click', function () {
+    bgm.play();
+  });
+
   learnBtn.addEventListener('click', function () {
     home.classList.add('hidden');
     form.classList.remove('hidden');
