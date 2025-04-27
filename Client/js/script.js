@@ -12,6 +12,14 @@ window.addEventListener('load', function () {
     }
   }
 
+  function hideAllPages() {
+    home.classList.add('hidden');
+    form.classList.add('hidden');
+    thanks.classList.add('hidden');
+    errorPage.classList.add('hidden');
+    about.classList.add('hidden');
+  }
+  
   let home = document.getElementById('page-home');
   let form = document.getElementById('page-form');
   let thanks = document.getElementById('page-thanks');
@@ -21,7 +29,8 @@ window.addEventListener('load', function () {
   let nextStepBtn = document.getElementById('next-step');
   let basicInfo = document.getElementById('basic-info');
   let songRequest = document.getElementById('song-request');
-
+  let aboutBtn = document.getElementById('nav-about');
+  let about = document.getElementById('page-about');
 
 
   const bgm = document.getElementById('bgm');
@@ -70,7 +79,13 @@ window.addEventListener('load', function () {
     });
   });
 
-
+  // about us
+  aboutBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    hideAllPages();
+    about.classList.remove('hidden');
+  });
+  //learn more
   learnBtn.addEventListener('click', function () {
     home.classList.add('hidden');
     form.classList.remove('hidden');
