@@ -99,50 +99,58 @@ window.addEventListener('load', function () {
 
   valentineForm.addEventListener('submit', function (event) {
     event.preventDefault();
-
+  
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let insta = document.getElementById("insta").value;
     let date = document.getElementById("date").value;
     let timeslot = document.getElementById("timeslot").value;
-
+  
     if (!date || !timeslot) {
       console.error("Date or timeslot is missing");
       return;
     }
-
-    let url = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}&date=${date}&timeslot=${timeslot}`;
-
-    console.log("Submitting form data to: " + url);
-
-    fetch(url)
-      .then(response => response.json()) 
-      .then(success) 
+  
+    let checkAvailabilityUrl = `server/band_availability.php?date=${date}&timeslot=${timeslot}`;
+  
+    fetch(checkAvailabilityUrl)
+      .then(response => response.json())
+      .then(data => {
+        if (!data.success) {
+          form.classList.add('hidden');
+          errorPage.classList.remove('hidden');
+          document.getElementById("error-message").innerHTML = data.error || "Unable to check band availability.";
+          return;
+        }
+  
+        if (data.num_members < 1) {
+          alert("Sorry, the band is not available at that time. Please choose another slot.");
+          return;
+        }
+  
+        // Proceed with form submission
+        let submitUrl = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}`;
+        console.log("Submitting form data to: " + submitUrl);
+  
+        fetch(submitUrl)
+          .then(response => response.json())
+          .then(success)
+          .catch(error => {
+            console.error("Error with fetch:", error);
+            form.classList.add('hidden');
+            errorPage.classList.remove('hidden');
+            document.getElementById("error-message").innerHTML = "There was an error with your submission. Please try again.";
+          });
+  
+      })
       .catch(error => {
-        console.error("Error with fetch:", error);
+        console.error("Error checking band availability:", error);
         form.classList.add('hidden');
         errorPage.classList.remove('hidden');
-        document.getElementById("error-message").innerHTML = "There was an error with your submission. Please try again.";
+        document.getElementById("error-message").innerHTML = "There was an error checking availability.";
       });
   });
-
-  // Custom Cursor
-  const cursor = document.createElement('div');
-  cursor.classList.add('custom-cursor');
-  document.body.appendChild(cursor);
-
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-
-  document.addEventListener('mousedown', () => {
-    cursor.classList.add('clicked');
-  });
-
-  document.addEventListener('mouseup', () => {
-    cursor.classList.remove('clicked');
-  });
+  
 
 
   
