@@ -4,20 +4,21 @@ Team number:27
 
 
 */
-* {
-  cursor: none;
-}
 
+* {
+  cursor: url('images/dot.png') 9 9, auto;
+
+}
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fbc9e2;
   color: #1f2937;
- 
-  
+
   
 }
+
 
 
 .container {
@@ -47,7 +48,6 @@ body {
   border: none;
   border-radius: 9999px;
   font-size: 1rem;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -124,7 +124,6 @@ body {
   border: none;
   border-radius: 9999px;
   font-size: 1rem;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -321,22 +320,6 @@ body {
 }
 
 
-.custom-cursor {
-  position: fixed;
-  width: 18px;
-  height: 18px;
-  background: url('images/dot.png') no-repeat center center;
-  background-size: cover;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.2s ease;
-  z-index: 9999;
-
-}
-
-.custom-cursor.clicked {
-  transform: translate(-50%, -50%) scale(2); /* grow on click */
-}
 
 .error-message {
   font-size: 0.9rem;
