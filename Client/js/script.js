@@ -1,7 +1,3 @@
-/** 
- * Team number: 27
- */
-
 window.addEventListener('load', function () {
   function success(response) {
     if (response.success) {
@@ -9,7 +5,7 @@ window.addEventListener('load', function () {
       thanks.classList.remove('hidden');
       console.log("Things went ok. Submission successful.");
     } else {
-      form.classList.add('hidden');
+      form.classLisSt.add('hidden');
       errorPage.classList.remove('hidden');
       document.getElementById("error-message").innerHTML = response.error || "Something went wrong.";
       console.log("Error: " + response.error);
@@ -22,7 +18,11 @@ window.addEventListener('load', function () {
   let errorPage = document.getElementById('page-error');
   let learnBtn = document.getElementById('learn-more');
   let valentineForm = document.getElementById('valentine-form');
-  let songForm = document.getElementById('song-form');
+  let nextStepBtn = document.getElementById('next-step');
+  let basicInfo = document.getElementById('basic-info');
+  let songRequest = document.getElementById('song-request');
+
+
 
   const bgm = document.getElementById('bgm');
   document.body.addEventListener('click', function () {
@@ -70,10 +70,32 @@ window.addEventListener('load', function () {
     });
   });
 
+
   learnBtn.addEventListener('click', function () {
     home.classList.add('hidden');
     form.classList.remove('hidden');
   });
+
+  nextStepBtn.addEventListener('click', function () {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let insta = document.getElementById("insta").value.trim();
+    let errorDiv = document.getElementById("basic-info-error");
+  
+    if (!name || !email || !insta) {
+      errorDiv.innerHTML = "💌 Please fill out Name, Email, and Instagram before continuing.";
+      errorDiv.style.color = "red"; // (optional) style it red
+      return;
+    }
+  
+    // If all filled, clear the error
+    errorDiv.innerHTML = "";
+  
+    basicInfo.classList.add('hidden');
+    songRequest.classList.remove('hidden');
+  });
+  
+  
 
   valentineForm.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -81,8 +103,15 @@ window.addEventListener('load', function () {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let insta = document.getElementById("insta").value;
+    let date = document.getElementById("date").value;
+    let timeslot = document.getElementById("timeslot").value;
 
-    let url = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}`;
+    if (!date || !timeslot) {
+      console.error("Date or timeslot is missing");
+      return;
+    }
+
+    let url = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}&date=${date}&timeslot=${timeslot}`;
 
     console.log("Submitting form data to: " + url);
 
@@ -97,30 +126,24 @@ window.addEventListener('load', function () {
       });
   });
 
-  songForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+  // Custom Cursor
+  const cursor = document.createElement('div');
+  cursor.classList.add('custom-cursor');
+  document.body.appendChild(cursor);
 
-    let date = document.getElementById("date").value;
-    let timeslot = document.getElementById("timeslot").value;
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
 
-    if (!date || !timeslot) {
-      console.error("Date or timeslot is missing");
-      return;
-    }
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('clicked');
+  });
 
-    let url = `server/band_availability.php?date=${date}&timeslot=${timeslot}`;
+  document.addEventListener('mouseup', () => {
+    cursor.classList.remove('clicked');
+  });
 
-    console.log("Checking availability at: " + url);
 
   
-    fetch(url)
-      .then(response => response.json()) 
-      .then(success) 
-      .catch(error => {
-        console.error("Error with fetch:", error);
-        form.classList.add('hidden');
-        errorPage.classList.remove('hidden');
-        document.getElementById("error-message").innerHTML = "There was an error while checking availability. Please try again.";
-      });
-  });
 });
