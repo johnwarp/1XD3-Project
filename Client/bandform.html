@@ -8,63 +8,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BandyGrams Band Member Sign up</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/signup_page.css">
 </head>
 
 <body>
-    <div id="page-form" class="form-container">
-        <h1>💘 BandyGram Sign Up Form</h1>
-        <!--action="valentine_form.php" method="POST"    php might added here-->
-        <form id="valentine-form" action="server/process_submission.php" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
+  <div class="form-container">
+    <h1>💘 BandyGram Sign Up Form</h1>
 
-            <label for="email">macID:</label>
-            <input type="email" id="email" required>
+    <form id="valentine-form" action="server/process_submission.php" method="POST">
 
-            <!-- TODO: style this -->
-            <label for="instrument">Instrument:</label>
-            <select name="instrument" id="instrument" required>
-                <option value="Trumpet">Trumpet</option>
-                <option value="Clarinet">Clarinet</option>
-                <option value="Flute">Flute</option>
-                <option value="Alto Sax">Alto Sax</option>
-                <option value="Tenor Sax">Tenor Sax</option>
-                <option value="Sousaphone">Sousaphone</option>
-                <option value="Trombone">Trombone</option>
-            </select>
+      
+      <div class="form-split">
 
-            <!-- TODO: style the checkboxes -->
-            <h3>Preferred Time:</h3>
-            <p><strong>Monday April 28th</strong></p>
-            <label><input type="checkbox" name="monday" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="monday" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="monday" value="5pm"> 5 pm </label>
+       
+        <section class="form-section left-section">
+          <h2>🎶 Personal Information</h2>
 
-            <p><strong>Tuesday April 29th</strong></p>
-            <label><input type="checkbox" name="tuesday" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="tuesday" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="tuesday" value="5pm"> 5 pm</label>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
 
-            <p><strong>Wednesday April 30th</strong></p>
-            <label><input type="checkbox" name="wednesday" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="wednesday" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="wednesday" value="5pm"> 5 pm</label>
+          <label for="email">MacID:</label>
+          <input type="email" id="email" name="email" required>
 
-            <p><strong>Thursday May 1st</strong></p>
-            <label><input type="checkbox" name="thursday" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="thursday" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="thursday" value="5pm"> 5 pm</label>
+          <label for="instrument">Instrument:</label>
+          <select id="instrument" name="instrument" required>
+            <option value="">--Please select--</option>
+            <option value="Trumpet">Trumpet</option>
+            <option value="Clarinet">Clarinet</option>
+            <option value="Flute">Flute</option>
+            <option value="Alto Sax">Alto Sax</option>
+            <option value="Tenor Sax">Tenor Sax</option>
+            <option value="Sousaphone">Sousaphone</option>
+            <option value="Trombone">Trombone</option>
+          </select>
+        </section>
 
-            <p><strong>Friday May 2nd</strong></p>
-            <label><input type="checkbox" name="friday" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="friday" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="friday" value="5pm"> 5 pm</label>
+        
+        <section class="form-section right-section">
+          <h2>🕒 Preferred Time</h2>
 
-            <button type="submit">Submit 💖</button>
-        </form>
-    </div>
+          <div class="day-section">
+            <h3>Monday, April 28th</h3>
+            <label><input type="checkbox" name="monday[]" value="11am"> 11 am</label>
+            <label><input type="checkbox" name="monday[]" value="2pm"> 2 pm</label>
+            <label><input type="checkbox" name="monday[]" value="5pm"> 5 pm</label>
+          </div>
+
+          <div class="day-section">
+            <h3>Tuesday, April 29th</h3>
+            <label><input type="checkbox" name="tuesday[]" value="11am"> 11 am</label>
+            <label><input type="checkbox" name="tuesday[]" value="2pm"> 2 pm</label>
+            <label><input type="checkbox" name="tuesday[]" value="5pm"> 5 pm</label>
+          </div>
+
+          <div class="day-section">
+            <h3>Wednesday, April 30th</h3>
+            <label><input type="checkbox" name="wednesday[]" value="11am"> 11 am</label>
+            <label><input type="checkbox" name="wednesday[]" value="2pm"> 2 pm</label>
+            <label><input type="checkbox" name="wednesday[]" value="5pm"> 5 pm</label>
+          </div>
+
+          <div class="day-section">
+            <h3>Thursday, May 1st</h3>
+            <label><input type="checkbox" name="thursday[]" value="11am"> 11 am</label>
+            <label><input type="checkbox" name="thursday[]" value="2pm"> 2 pm</label>
+            <label><input type="checkbox" name="thursday[]" value="5pm"> 5 pm</label>
+          </div>
+
+          <div class="day-section">
+            <h3>Friday, May 2nd</h3>
+            <label><input type="checkbox" name="friday[]" value="11am"> 11 am</label>
+            <label><input type="checkbox" name="friday[]" value="2pm"> 2 pm</label>
+            <label><input type="checkbox" name="friday[]" value="5pm"> 5 pm</label>
+          </div>
+
+        </section>
+      </div>
+
+      <button type="submit">Submit 💖</button>
+
+    </form>
+  </div>
 </body>
 
 </html>
