@@ -81,23 +81,23 @@
     <!--action="valentine_form.php" method="POST"    php might added here-->
     <form id="valentine-form" action="server/process_submission.php" method="POST">
       <label for="name">Name:</label>
-      <input type="text" id="name" required>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Email:</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" name="email" required>
 
       <label for="time">Preferred Time:</label>
-      <input type="datetime-local" id="time" required>
+      <input type="datetime-local" id="time" name="time" required>
       <!--Three empty text input, easy for us to add things later-->
       <!-- modified msg1 to become the user's instagram handle -->
       <label for="insta">Instagram @:</label>
-      <input type="text" id="insta" required>
+      <input type="text" id="insta" name="insta" required>
 
       <label for="msg2">Song request:</label>
-      <input type="text" id="msg2" required>
+      <input type="text" id="msg2" name="msg2" required>
 
       <label for="msg3">Message 3:</label>
-      <input type="text" id="msg3" required>
+      <input type="text" id="msg3" name="msg3" required>
 
       <button type="submit">Submit 💖</button>
     </form>
