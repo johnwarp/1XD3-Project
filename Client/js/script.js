@@ -5,12 +5,13 @@ window.addEventListener('load', function () {
       thanks.classList.remove('hidden');
       console.log("Things went ok. Submission successful.");
     } else {
-      form.classList.add('hidden');
+      form.classLisSt.add('hidden');
       errorPage.classList.remove('hidden');
       document.getElementById("error-message").innerHTML = response.error || "Something went wrong.";
       console.log("Error: " + response.error);
     }
   }
+
 
   function hideAllPages() {
     home.classList.add('hidden');
@@ -19,7 +20,8 @@ window.addEventListener('load', function () {
     errorPage.classList.add('hidden');
     about.classList.add('hidden');
   }
-  
+
+
   let home = document.getElementById('page-home');
   let form = document.getElementById('page-form');
   let thanks = document.getElementById('page-thanks');
@@ -79,13 +81,13 @@ window.addEventListener('load', function () {
     });
   });
 
-  // about us
+
   aboutBtn.addEventListener('click', function (e) {
     e.preventDefault();
     hideAllPages();
     about.classList.remove('hidden');
   });
-  //learn more
+  
   learnBtn.addEventListener('click', function () {
     home.classList.add('hidden');
     form.classList.remove('hidden');
