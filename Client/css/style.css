@@ -4,17 +4,19 @@ Team number:27
 
 
 */
-*{
-  cursor: url('images/custom-cursor.png'), auto;
-
+* {
+  cursor: none;
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fbc9e2;
   color: #1f2937;
-
+ 
+  
+  
 }
 
 
@@ -92,66 +94,42 @@ body {
 }
 
 .form-container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 50px auto;
-  padding: 40px 30px;
-  background-color: #ffffff; /* 整体白色 */
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-  color: #1f2937;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .form-container label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  color: #374151;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="datetime-local"] {
+.form-container input:not([type="checkbox"]) {
   width: 100%;
-  padding: 10px 16px;
-  margin-bottom: 20px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  background-color: #fff;
-  box-sizing: border-box;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="datetime-local"]:focus {
-  border-color: #f472b6;
-  outline: none;
-}
-
-button[type="submit"] {
-  display: block;
-  width: 100%;
-  margin-top: 30px;
-  padding: 12px 0;
+.form-container button {
+  margin-top: 20px;
+  padding: 12px;
   background-color: #ec4899;
   color: white;
-  font-size: 1.2rem;
   border: none;
   border-radius: 9999px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover {
+.form-container button:hover {
   background-color: #db2777;
-  transform: scale(1.02);
 }
 
 .thank-you {
@@ -251,7 +229,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background: #f9a8d4;
+    background: white;
     padding: 35px 20px;
     position: sticky;
     top: 0;
@@ -341,4 +319,29 @@ body {
     margin-top: 120px; /* Adds space after the navbar */
   }
 }
+
+
+.custom-cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: url('images/dot.png') no-repeat center center;
+  background-size: cover;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease;
+  z-index: 9999;
+
+}
+
+.custom-cursor.clicked {
+  transform: translate(-50%, -50%) scale(2); /* grow on click */
+}
+
+.error-message {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: rgb(164, 17, 66);
+}
+
 
