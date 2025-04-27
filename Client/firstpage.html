@@ -6,16 +6,15 @@
   <title>Serenade Your Valentine</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="js/script.js"></script>
+  <style>
+  /* Override the cursor on clickable elements */
+    button, a, .clickable {
+      cursor: none; 
+    }
+    </style>
 </head>
 
 <body>
-  <!-- Home page
-   1. maybe change the mouse to heart later
-   2. maybe add some bgm 
-   3. maybe add some picture
-   4. add more info to explain what the page is about
-   5. have a page giving further information on the marching band in case the user wants to join
- -->
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
@@ -28,19 +27,20 @@
       </ul>
     </div>
   </nav>
+
   <div id="page-home" class="container">
     <h1 class="title">Serenade <br /> Your Valentine</h1>
     <div class="subtitle-with-drum">
-      <p class="subtitle">
-        Request a personalized performance from the McMaster Marching Band
-      </p>
-      <div class="drum-animation">
-        <div class="drum"></div>
-        <div class="stick stick-left"></div>
-        <div class="stick stick-right"></div>
+        <p class="subtitle">
+          Request a personalized performance from the McMaster Marching Band
+        </p>
+        <div class="drum-animation">
+          <div class="drum"></div>
+          <div class="stick stick-left"></div>
+          <div class="stick stick-right"></div>
+        </div>
       </div>
-    </div>
-    <button class="button" id="learn-more">💌 Learn more</button>
+      <button class="button" id="learn-more">💌 Learn more</button>
 
     <div class="grid">
       <div class="card pink" id="card-pink">
@@ -65,7 +65,9 @@
     <div class="heart" style="top: 200px; right: 50px; animation-delay: 2s;">💓</div>
     <div class="heart" style="top: 150px; right: 100px; animation-delay: 3s;">💘</div>
   </div>
+
   <audio id="bgm" autoplay loop>
+
     <source src="audio/Firstpage.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
@@ -78,57 +80,51 @@
    -->
   <div id="page-form" class="form-container hidden">
     <h1>💘 Valentine Request Form</h1>
-    <!--action="valentine_form.php" method="POST"    php might added here-->
-    <form id="valentine-form" action="server/process_submission.php" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <form id="valentine-form">
+      <!-- Step 1: Basic Information -->
+      <div id="basic-info">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="time">Preferred Time:</label>
-      <input type="datetime-local" id="time" name="time" required>
-      <!--Three empty text input, easy for us to add things later-->
-      <!-- modified msg1 to become the user's instagram handle -->
-      <label for="insta">Instagram @:</label>
-      <input type="text" id="insta" name="insta" required>
+        <label for="insta">Instagram @:</label>
+        <input type="text" id="insta" name="insta" required>
 
-      <label for="msg2">Song request:</label>
-      <input type="text" id="msg2" name="msg2" required>
+        <div id="basic-info-error" class="error-message"></div>
 
-      <label for="msg3">Message 3:</label>
-      <input type="text" id="msg3" name="msg3" required>
+        <button type="button" id="next-step">Next 💖</button>
+      </div>
 
-      <button type="submit">Submit 💖</button>
+      <!-- Step 2: Song Request (hidden initially) -->
+      <div id="song-request" class="hidden">
+        <label for="timeslot">Preferred Time:</label>
+        <input type="time" id="timeslot" name="timeslot" required>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit 💖</button>
+      </div>
     </form>
   </div>
 
-  <!-- Thanks page 
-   1. more fancy
-   2. maybe add more button (more info/back to homepage/....)
-   -->
+  <!-- Success Page -->
   <div id="page-thanks" class="thank-you hidden">
     <h1>💖 Thank you for submitting!</h1>
     <p>Your information has been successfully submitted!</p>
     <p>We'll serenade your Valentine soon!</p>
   </div>
 
-
-  <!--  Error page (mainly for debugging)
-    probably delete soon or spruce it up so it doesn't look stupid
-  
-  -->
+  <!-- Error Page -->
   <div id="page-error" class="hidden">
     <h1 id="error-message">Something went wrong</h1>
   </div> 
 
-  <div class="wrapper">
-    <div class="cursor"></div>
-  </div>
-  <footer>
-    @ 2025 McMaster Marching Band
-  </footer>
+  <div class="custom-cursor" id="cursor"></div>
+ 
 
-  
+ 
 </body>
 </html>
