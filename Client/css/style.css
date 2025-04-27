@@ -149,6 +149,7 @@ body {
 
 .form-container button:hover {
   background-color: #db2777;
+  transform: scale(1.02);
 }
 
 .thank-you {
