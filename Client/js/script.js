@@ -5,7 +5,7 @@ window.addEventListener('load', function () {
       thanks.classList.remove('hidden');
       console.log("Things went ok. Submission successful.");
     } else {
-      form.classLisSt.add('hidden');
+      form.classList.add('hidden');
       errorPage.classList.remove('hidden');
       document.getElementById("error-message").innerHTML = response.error || "Something went wrong.";
       console.log("Error: " + response.error);
