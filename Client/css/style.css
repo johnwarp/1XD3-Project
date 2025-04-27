@@ -93,6 +93,26 @@ body {
   display: none;
 }
 
+/* About Us */
+.about-image {
+  width: 70%;
+  height: 600px;
+  border-radius: 20px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  object-fit: cover; 
+}
+
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #8532c8; 
+  text-align: center; 
+}
+
 .form-container {
   max-width: 500px;
   margin: 50px auto;
