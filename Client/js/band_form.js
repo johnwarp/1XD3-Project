@@ -54,11 +54,11 @@ window.addEventListener("load", function(event) {
         let all_times_str = JSON.stringify(all_times);
         let encoded_all_times = encodeURIComponent(all_times_str);
 
-        // let url = `server/add_band_member.php?name=${name}&macid=${macid}&instrument=${instrument}&alltimes=${encoded_all_times}`;
+        let url = `server/add_band_member.php?name=${name}&macid=${macid}&instrument=${instrument}&alltimes=${encoded_all_times}`;
 
-        // fetch(url)
-        //     .then(response => response.json())
-        //     .then(success);
+        fetch(url)
+            .then(response => response.json())
+            .then(success);
         
     });
 
