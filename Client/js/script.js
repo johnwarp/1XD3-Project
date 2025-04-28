@@ -157,7 +157,7 @@ window.addEventListener('load', function () {
         }
   
         // Proceed with form submission
-        let submitUrl = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}&song_request=${song_request}`;
+        let submitUrl = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}&song_request=${song_request}&date=${date}&timeslot=${timeslot}`;
         console.log("Submitting form data to: " + submitUrl);
   
         fetch(submitUrl)

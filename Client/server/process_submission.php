@@ -11,6 +11,8 @@ $name = filter_input(INPUT_GET, "name", FILTER_SANITIZE_SPECIAL_CHARS);
 $email = filter_input(INPUT_GET, "email", FILTER_SANITIZE_SPECIAL_CHARS);
 $insta = filter_input(INPUT_GET, "insta", FILTER_SANITIZE_SPECIAL_CHARS);
 $song_request = filter_input(INPUT_GET, "song_request", FILTER_SANITIZE_SPECIAL_CHARS);
+$date = filter_input(INPUT_GET, "date", FILTER_SANITIZE_SPECIAL_CHARS);
+$timeslot = filter_input(INPUT_GET, "timeslot", FILTER_SANITIZE_SPECIAL_CHARS);
 
 $paramsok = true;
 
@@ -19,14 +21,18 @@ try {
         $name !== null && $name !== "" &&
         $email !== null && $email !== "" &&
         $insta !== null && $insta !== "" &&
-        $song_request !== null && $song_request !== ""
+        $song_request !== null && $song_request !== "" &&
+        $date !== null && $date !== "" &&
+        $timeslot !== null && $timeslot !== ""
     ) {
+        $date_time = $date . " " . $timeslot;
+
         // Preparing the insert command
-        $cmd = "INSERT INTO `submission`(`email`, `name`, `insta`, `song_request`) VALUES (?, ?, ?, ?)";
+        $cmd = "INSERT INTO `submission`(`email`, `name`, `timeslot`, `insta`, `song_request`) VALUES (?, ?, ?, ?, ?)";
         $stmt = $dbh->prepare($cmd);
 
         // Executing the insert command
-        $args = [$email, $name, $insta, $song_request];
+        $args = [$email, $name, $date_time, $insta, $song_request];
         $success = $stmt->execute($args);
 
         if ($success) {
