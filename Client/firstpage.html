@@ -114,8 +114,12 @@
 
       <!-- Step 2: Song Request (hidden initially) -->
       <div id="song-request" class="hidden">
-        <label for="timeslot">Preferred Time:</label>
-        <input type="time" id="timeslot" name="timeslot" required>
+        <label for="timeslot">Preferred Time</label>
+        <select id="timeslot" name="timeslot" required>
+          <option value="11:00:00">11 am</option>
+          <option value="14:00:00">2 pm</option>
+          <option value="17:00:00">5 pm</option>
+        </select>
 
         <label for="date">Preferred Date:</label>
         <input type="date" id="date" name="date" required>
