@@ -218,12 +218,17 @@ button[type="button"]:hover {
   }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background: #f9a8d4;
-    color: #7c2d12;
-    margin-top: 60px;
-  }
+  text-align: center;
+  padding: 20px;
+  background: #f9a8d4;
+  color: #7c2d12;
+  margin-top: 40px;
+
+  position: fixed;   
+  bottom: 0;         
+  width: 100%;       
+}
+
 
 /* drum*/
 .subtitle-with-drum {
