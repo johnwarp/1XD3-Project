@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2025 at 10:21 AM
+-- Generation Time: Apr 28, 2025 at 05:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -30,21 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `submission` (
   `email` varchar(30) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `timeslot` date NOT NULL,
+  `timeslot` datetime NOT NULL,
   `insta` varchar(30) NOT NULL,
-  `msg2` varchar(50) DEFAULT NULL,
-  `msg3` varchar(50) DEFAULT NULL
+  `song_request` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `submission`
 --
 
-INSERT INTO `submission` (`email`, `name`, `timeslot`, `insta`, `msg2`, `msg3`) VALUES
-('bro@gmail.com', 'adsflkj', '2025-04-10', 'sdf', 'df', 'sdfsdfds'),
-('ldkdfj@lksjdf', 'sd', '2025-04-10', 'asdf', 'lkj', 'lkj'),
-('llkj@lkj', 'asdf', '2025-04-11', 'lkj', 'lkj', 'lkj'),
-('zhaos118@mcmaster.ca', 'Samuel Zhao', '2025-04-10', 'goblin', 'goblin', 'goblin');
+INSERT INTO `submission` (`email`, `name`, `timeslot`, `insta`, `song_request`) VALUES
+('1sankaraja@hdsb.ca', 'Ajay Sankar', '2025-05-02 17:00:00', 'ajay', 'song 3'),
+('bro@bro.bro', 'bruh', '2025-04-29 17:00:00', 'bro', 'brorbro'),
+('goblin@gmail.com', 'goblin', '2025-05-01 11:00:00', 'goblin', 'goblin'),
+('idk@hotmail.ca', 'idk', '2025-04-30 14:00:00', 'idk', 'idk'),
+('zhaos118@mcmaster.ca', 'Samuel Zhao', '2025-04-28 14:00:00', 'sam', 'song');
 
 --
 -- Indexes for dumped tables

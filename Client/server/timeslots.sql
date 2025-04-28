@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2025 at 07:32 AM
+-- Generation Time: Apr 28, 2025 at 05:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `timeslots` (
 
 INSERT INTO `timeslots` (`id`, `Time`) VALUES
 (0, '11:00:00'),
-(1, '13:00:00'),
+(1, '14:00:00'),
 (2, '17:00:00');
 
 --
