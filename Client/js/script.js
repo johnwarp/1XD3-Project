@@ -1,6 +1,16 @@
 window.addEventListener('load', function () {
-  function success(response) {
+  function success(response, instrumentation) {
     if (response.success) {
+      // show the instrumentation
+      instrumentsHTML = "Current Instrumentation:<br>";
+
+      for (let instrument in instrumentation) {
+        instrumentsHTML += instrument + ": " + instrumentation[instrument] + "<br>";
+      }
+
+      document.getElementById("instrumentation").innerHTML = instrumentsHTML;
+
+      // hide and show the necessary html elements
       form.classList.add('hidden');
       thanks.classList.remove('hidden');
       console.log("Things went ok. Submission successful.");
@@ -151,7 +161,7 @@ window.addEventListener('load', function () {
   
         fetch(submitUrl)
           .then(response => response.json())
-          .then(success)
+          .then(response => success(response, data.instrumentation))
           .catch(error => {
             console.error("Error with fetch:", error);
             form.classList.add('hidden');
