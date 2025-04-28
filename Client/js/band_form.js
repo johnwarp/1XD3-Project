@@ -1,8 +1,5 @@
 window.addEventListener("load", function(event) {
-    console.log("bro");
     function success(response) {
-        console.log(response);
-
         let pageForm = document.getElementById("page-form");
 
         if (response.success) {
@@ -45,10 +42,6 @@ window.addEventListener("load", function(event) {
         let friday_times = querySelectorToArr(document.querySelectorAll("input[name='friday']:checked"));
 
         let all_times = [monday_times, tuesday_times, wednesday_times, thursday_times, friday_times];
-
-        console.log(name, macid, instrument);
-
-        console.log(all_times);
 
         // stringifying and encoding so that the nested array structure is preserved
         let all_times_str = JSON.stringify(all_times);
