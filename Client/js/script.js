@@ -130,6 +130,7 @@ window.addEventListener('load', function () {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let insta = document.getElementById("insta").value;
+    let song_request = document.getElementById("song").value;
     let date = document.getElementById("date").value;
     let timeslot = document.getElementById("timeslot").value;
   
@@ -156,7 +157,7 @@ window.addEventListener('load', function () {
         }
   
         // Proceed with form submission
-        let submitUrl = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}`;
+        let submitUrl = `server/process_submission.php?name=${name}&email=${email}&insta=${insta}&song_request=${song_request}`;
         console.log("Submitting form data to: " + submitUrl);
   
         fetch(submitUrl)
