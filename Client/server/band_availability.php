@@ -67,13 +67,61 @@ if ($date !== NULL && $date !== "") {
 
     $num_members = 0;
 
-    while ($row = $stmt->fetch()) {
+    $instrumentation = [];
+
+    // preparing to retrieve the instrument id of the member
+    $member_cmd = "SELECT `Instrument_id` FROM `members` WHERE `id`=?";
+    $member_stmt = $dbh->prepare($member_cmd);
+
+    // preparing the command to retrieve the instrument based on its id
+    $instrument_cmd = "SELECT `Instrument` FROM `instruments` WHERE `id`=?";
+    $instrument_stmt = $dbh->prepare($instrument_cmd);
+
+    // retrieving instrumentation data from the server and counting the amount of members available that timeslot
+    while ($available_data = $stmt->fetch()) {
+        $member_args = [$available_data["member_id"]];
+        $member_success = $member_stmt->execute($member_args);
+
+        if (!$member_success) {
+            echo json_encode([
+                "success" => false,
+                "num_members" => NULL,
+                "error" => "Something went wrong fetching data from the server"
+            ]);
+            die();
+        }
+
+        $member_data = $member_stmt->fetch();
+
+        $instrument_args = [$member_data["Instrument_id"]];
+        $instrument_success = $instrument_stmt->execute($instrument_args);
+
+        if (!$instrument_success) {
+            echo json_encode([
+                "success" => false,
+                "num_members" => NULL,
+                "error" => "Something went wrong fetching data from the server"
+            ]);
+            die();
+        }
+
+        $instrument_data = $instrument_stmt->fetch();
+        $instrument = $instrument_data["Instrument"];
+
+        // adds to the associative array of instruments
+        if (isset($instrumentation[$instrument])) {
+            $instrumentation[$instrument] += 1;
+        } else {
+            $instrumentation[$instrument] = 1;
+        }
+        
         $num_members++;
     }
 
     echo json_encode([
         "success" => true,
         "num_members" => $num_members,
+        "instrumentation" => $instrumentation,
         "error" => NULL
     ]);
     die();
