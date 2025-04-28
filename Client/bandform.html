@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BandyGrams Band Member Sign up</title>
     <link rel="stylesheet" href="css/signup_page.css">
+    <script src="js/band_form.js"></script>
 </head>
 
 <body>
@@ -16,19 +17,15 @@
     <h1>💘 BandyGram Sign Up Form</h1>
 
     <form id="valentine-form" action="server/process_submission.php" method="POST">
-
-      
       <div class="form-split">
-
-       
         <section class="form-section left-section">
           <h2>🎶 Personal Information</h2>
 
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required>
 
-          <label for="email">MacID:</label>
-          <input type="email" id="email" name="email" required>
+          <label for="macid">MacID:</label>
+          <input type="text" id="macid" name="macid" required>
 
           <label for="instrument">Instrument:</label>
           <select id="instrument" name="instrument" required>
@@ -42,44 +39,43 @@
             <option value="Trombone">Trombone</option>
           </select>
         </section>
-
         
         <section class="form-section right-section">
           <h2>🕒 Preferred Time</h2>
 
           <div class="day-section">
             <h3>Monday, April 28th</h3>
-            <label><input type="checkbox" name="monday[]" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="monday[]" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="monday[]" value="5pm"> 5 pm</label>
+            <label><input type="checkbox" name="monday" value="0"> 11 am</label>
+            <label><input type="checkbox" name="monday" value="1"> 2 pm</label>
+            <label><input type="checkbox" name="monday" value="2"> 5 pm</label>
           </div>
 
           <div class="day-section">
             <h3>Tuesday, April 29th</h3>
-            <label><input type="checkbox" name="tuesday[]" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="tuesday[]" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="tuesday[]" value="5pm"> 5 pm</label>
+            <label><input type="checkbox" name="tuesday" value="0"> 11 am</label>
+            <label><input type="checkbox" name="tuesday" value="1"> 2 pm</label>
+            <label><input type="checkbox" name="tuesday" value="2"> 5 pm</label>
           </div>
 
           <div class="day-section">
             <h3>Wednesday, April 30th</h3>
-            <label><input type="checkbox" name="wednesday[]" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="wednesday[]" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="wednesday[]" value="5pm"> 5 pm</label>
+            <label><input type="checkbox" name="wednesday" value="0"> 11 am</label>
+            <label><input type="checkbox" name="wednesday" value="1"> 2 pm</label>
+            <label><input type="checkbox" name="wednesday" value="2"> 5 pm</label>
           </div>
 
           <div class="day-section">
             <h3>Thursday, May 1st</h3>
-            <label><input type="checkbox" name="thursday[]" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="thursday[]" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="thursday[]" value="5pm"> 5 pm</label>
+            <label><input type="checkbox" name="thursday" value="0"> 11 am</label>
+            <label><input type="checkbox" name="thursday" value="1"> 2 pm</label>
+            <label><input type="checkbox" name="thursday" value="2"> 5 pm</label>
           </div>
 
           <div class="day-section">
             <h3>Friday, May 2nd</h3>
-            <label><input type="checkbox" name="friday[]" value="11am"> 11 am</label>
-            <label><input type="checkbox" name="friday[]" value="2pm"> 2 pm</label>
-            <label><input type="checkbox" name="friday[]" value="5pm"> 5 pm</label>
+            <label><input type="checkbox" name="friday" value="0"> 11 am</label>
+            <label><input type="checkbox" name="friday" value="1"> 2 pm</label>
+            <label><input type="checkbox" name="friday" value="2"> 5 pm</label>
           </div>
 
         </section>
